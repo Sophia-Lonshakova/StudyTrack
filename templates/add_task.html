@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить задачу — Неделя {{ week }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Добавить задачу — Неделя {{ week }}</h1>
+    <form method="POST">
+        <label>Название:</label><br>
+        <input type="text" name="title" required><br><br>
+
+        <label>Предмет:</label><br>
+        <input type="text" name="subject"><br><br>
+
+        <label>Срок:</label><br>
+        <input type="date" name="deadline"><br><br>
+
+        <label>Описание:</label><br>
+        <textarea name="description"></textarea><br><br>
+
+        <button type="submit">Сохранить</button>
+    </form>
+
+    <p><a href="{{ url_for('week_tasks', semester_id=semester_id, week_num=week) }}" class="button-link">Назад к неделе</a></p>
+</body>
+</html>

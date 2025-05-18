@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #272727; /* Тёмный фон */
+    color: #ffffff;
+}
+
+h1 {
+    color: #557bc2;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #557bc2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #46659d; /* Светло-синяя карточка */
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    color: #000000; /* Чёрный текст внутри задач */
+}
+
+.task-description {
+    margin-top: 8px;
+    padding-left: 10px;
+    font-style: italic;
+    color: #1a1a1a; /* Чёрно-серый текст описания */
+}
+
+button {
+    margin: 6px 4px 0 0;
+    padding: 6px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #272727;
+    color: #557bc2;
+    border: 1px solid #557bc2;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #1f1f1f;
+}
+
+form {
+    display: inline;
+}
+
+/* Ссылки-кнопки */
+.button-link {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    background-color: #272727;
+    color: #557bc2;
+    border: 1px solid #557bc2;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.button-link:hover {
+    background-color: #1f1f1f;
+    text-decoration: none;
+}
+
+/* Инпуты и текстовые поля */
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #557bc2;
+    border-radius: 6px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}

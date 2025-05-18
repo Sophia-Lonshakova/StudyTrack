@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ semester.name }} — Неделя {{ week }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>{{ semester.name }} — Неделя {{ week }}</h1>
+
+    {% if tasks %}
+        <ul>
+        {% for task in tasks %}
+            <li>
+                <strong>{{ task.title }}</strong> ({{ task.subject }}) — {{ task.deadline }}
+                {% if task.description %}
+                    <div class="task-description">{{ task.description }}</div>
+                {% endif %}
+                {% if task.is_done %}
+                    ✔
+                {% else %}
+                <form method="POST" action="/complete/{{ task.id }}" style="display:inline;" onsubmit="return confirm('Вы действительно хотите отметить задачу как выполненную?');">
+    <button type="submit">Выполнено</button>
+</form>
+                {% endif %}
+                <form method="POST" action="/delete/{{ task.id }}" style="display:inline;" onsubmit="return confirm('Вы действительно хотите удалить эту задачу?');">
+                    <button type="submit">Удалить</button>
+                </form>
+                <a href="/edit/{{ task.id }}">
+                    <button type="button">Редактировать</button>
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Задач пока нет.</p>
+    {% endif %}
+
+    <a href="/add/{{ semester.id }}/{{ week }}" class="button-link">Добавить задачу</a><br><br>
+    <a href="/semester/{{ semester.id }}" class="button-link">Назад к неделям</a>
+</body>
+</html>

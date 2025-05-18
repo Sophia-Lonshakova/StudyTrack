@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ semester.name }} — Недели</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>{{ semester.name }} — Недели</h1>
+
+    <ul>
+        {% for week in weeks %}
+            <li>
+                <a href="/semester/{{ semester.id }}/week/{{ week }}" class="button-link">
+                    Неделя {{ week }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="/" class="button-link">Назад к семестрам</a></p>
+</body>
+</html>

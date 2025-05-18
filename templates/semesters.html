@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Семестры</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Семестры</h1>
+
+    <ul>
+        {% for sem in semesters %}
+            <li>
+                <a href="/semester/{{ sem.id }}" class="button-link">{{ sem.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <form method="POST" action="/add-semester">
+        <input type="text" name="name" placeholder="Название семестра" required>
+        <button type="submit">Добавить семестр</button>
+    </form>
+</body>
+</html>
